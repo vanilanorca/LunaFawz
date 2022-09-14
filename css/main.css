@@ -75,15 +75,14 @@
 #loading .mandala{
     height: 100%;
     position: absolute;
-    opacity: 0.2;
-    animation: mandala 2.8s both;
+    animation: mandala .5s both;
+    animation-delay: 4s;
 }
 #loading .mandala-esquerda{ left: 0; }
 #loading .mandala-direita{ right: 0; }
 @keyframes mandala{
     0% {}
-    50% {opacity: 0.8;}
-    100% {opacity: 0.2;}
+    100% {opacity: 0.3;}
 }
 
 @media screen and (max-width: 1180px){
@@ -92,7 +91,8 @@
         display: inherit;
         position: absolute;
         width: 200px;
-        animation: mandala 2.8s both;
+        animation: mandala .5s both;
+        animation-delay: 4s;
     }
 
     #loading .mandala-esquerda-mobile{
@@ -106,7 +106,6 @@
 
     @keyframes mandalaMobile{
         0% {}
-        50% {opacity: 0.8;}
         100% {opacity: 0.6;}
     }
 }
