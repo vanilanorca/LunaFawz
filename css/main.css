@@ -1,0 +1,122 @@
+@font-face {
+    font-family: "Gruppo";
+    src: url("../assets/fontes/Gruppo-Regular.ttf");
+}
+
+:root{
+    --colorGold: #CA8E32;
+}
+
+
+/*========== LOADING ==========*/
+#loading div{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    overflow: hidden;
+}
+
+#loading .logo{
+    width: 450px;
+    border-radius: 50%;
+    max-width: 80%;
+}
+
+#loading h1{
+    font-family: 'Gruppo';
+    color: white;
+    font-size: 2.6em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    -webkit-background-clip: text;
+	background-clip: text;
+	background-image: url('../assets/brilho-texto.gif');
+    background-position: center;
+    background-size: contain;
+	color: rgba(0, 0, 0, 0.277);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+#loading .text-block{
+    position: relative;
+    overflow: hidden;
+    width: auto;
+    height: auto;
+    margin-top: 20px;
+}
+#loading .text-block::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    animation: appear 3.5s infinite;
+    animation-delay: 2s;
+    border-left: 1.8px solid var(--colorGold);
+}
+
+@keyframes appear{
+    0% {}
+    50% {transform: translateX(99%);}
+    100% {transform: translateX(0);}
+}
+
+#loading .mandala-mobile{ display: none; }
+#loading .mandala{
+    height: 100%;
+    position: absolute;
+    opacity: 0.2;
+    animation: mandala 2.8s both;
+}
+#loading .mandala-esquerda{ left: 0; }
+#loading .mandala-direita{ right: 0; }
+@keyframes mandala{
+    0% {}
+    50% {opacity: 0.8;}
+    100% {opacity: 0.2;}
+}
+
+@media screen and (max-width: 1180px){
+    #loading .mandala{ display: none; }
+    #loading .mandala-mobile{
+        display: inherit;
+        position: absolute;
+        width: 200px;
+        animation: mandala 2.8s both;
+    }
+
+    #loading .mandala-esquerda-mobile{
+        left: 0;
+        top: 0;
+    }
+    #loading .mandala-direita-mobile{
+        right: 0;
+        bottom: 0;
+    }
+
+    @keyframes mandalaMobile{
+        0% {}
+        50% {opacity: 0.8;}
+        100% {opacity: 0.6;}
+    }
+}
+
+
+
+
+
+
+
+
+
+
